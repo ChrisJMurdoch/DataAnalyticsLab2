@@ -1,0 +1,12 @@
+
+/* Also present in global stylesheet */
+.transitional {
+    transition: all 1s ease-in-out;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* Also present in global stylesheet */
+.grow {
+    transform: scale(1.5);
+}
