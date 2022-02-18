@@ -83,6 +83,7 @@ body {
 }
 #code pre {
     margin: 0;
+    background-color: #EBEBF4;
 }
 
 /* Code column */
