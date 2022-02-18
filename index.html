@@ -30,23 +30,17 @@
     </script>
 
     <div id="exercise_column">
-
-        <!-- Exercise title -->
-        <h1 id="exercise_title"></h1>
-
-        <div id="exercise">
-            <!-- Exercise output -->
-            <iframe src="./exercises/Intro/exercise.html" id="display"></iframe>
-        </div>
+        <!-- Exercise iframe -->
+        <iframe src="./exercises/Intro/exercise.html" id="display"></iframe>
     </div>
 
     <div id="code_column">
         <!-- Exercise code (Rendered with Prism.js) -->
-        <div id="code">
+        <div id="code" class="js_code">
             <pre><code id="js_box" class="language-js"></code></pre>
         </div>
-        <div id="code">
-            <pre><code id="css_inner" class="language-css"></code></pre>
+        <div id="code" class="css_code">
+            <pre><code id="css_box" class="language-css"></code></pre>
         </div>
     </div>
 

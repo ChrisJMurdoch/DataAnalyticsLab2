@@ -65,29 +65,23 @@ body {
     overflow: visible;
 }
 
-#exercise {
-    border: 3px solid gray;
-    height: 80%;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-#exercise #display, #exercise #code {
+#display, #code {
     display: block;
-    height: 50%;
+    height: 100%;
     width: 100%;
     box-sizing: border-box;
     border: none;
 }
-#exercise #display {
+#display {
+    border: 3px solid grey;
     background-color: white;
 }
-#exercise #code {
+#code {
     margin: 0;
     border-radius: 0;
     overflow: scroll;
 }
-#exercise #code pre {
+#code pre {
     margin: 0;
 }
 
@@ -112,8 +106,15 @@ body {
 #code_column #code {
     margin: 0;
     border-radius: 0;
-    overflow: scroll;
+    overflow: hidden;
 }
 #code_column #code pre {
     margin: 0;
+    height: 100%;
+}
+#code_column #code.js_code {
+    border: 3px solid orange;
+}
+#code_column #code.css_code {
+    border: 3px solid blue;
 }

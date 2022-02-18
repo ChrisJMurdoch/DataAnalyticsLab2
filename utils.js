@@ -11,7 +11,7 @@ function populateMenu(section, exercises) {
 function switchExercise(name) {
 
     // Exercise title
-    d3.select("#exercise_title").text(`${name}`);
+    // d3.select("#exercise_title").text(`${name}`);
 
     // Exercise output
     d3.select("#display").attr("src", `./exercises/${name}/exercise.html`);
