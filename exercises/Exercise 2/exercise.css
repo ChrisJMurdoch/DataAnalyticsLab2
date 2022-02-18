@@ -1,0 +1,17 @@
+
+img {
+    width: 51%;
+    height: auto;
+    margin-bottom: 1%;
+}
+
+div {
+    position: relative;
+    background-color: lightgrey;
+    padding: 20px;
+    display: none;
+}
+img:hover + div {
+    position: absolute;
+    display: inline-block;
+}
