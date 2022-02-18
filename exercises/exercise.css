@@ -19,3 +19,13 @@ body {
     80% { border: 2px solid rgb(214, 0, 214); }
     100% { border: 2px solid red; }
 }
+
+/* From exercises 4 & 5 */
+.transitional {
+    transition: all 1s ease-in-out;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+.grow {
+    transform: scale(1.5);
+}

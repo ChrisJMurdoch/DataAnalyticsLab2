@@ -5,8 +5,6 @@
     transform-box: fill-box;
     transform-origin: center;
 }
-
-/* Also present in global stylesheet */
 .grow {
     transform: scale(1.5);
 }
