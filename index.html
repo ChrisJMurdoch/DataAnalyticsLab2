@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Load D3.js -->
+    <script src='./vendor/d3/d3.v7.min.js'></script>
+
+    <!-- Load utility functions -->
+    <script src='./utils.js'></script>
+    
+    <!-- Load Prism.js for code highlighting -->
+    <link href="vendor/prism_light/prism.css" rel="stylesheet">
+    <script src="vendor/prism_light/prism.js"></script>
+</head>
+
+<body>
+    
+    <!-- Create and auto-populate the menu -->
+    <div id="menu_outer">
+        <h1>Exercises</h1>
+        <div id="menu"></div>
+    </div>
+    <script>
+        populateMenu("Intro",   ["Intro"]);
+        populateMenu("Part 1",  ["Exercise 1", "Exercise 2"]);
+    </script>
+
+    <div id="exercise_column">
+
+        <!-- Exercise title -->
+        <h1 id="exercise_title"></h1>
+
+        <div id="exercise">
+            <!-- Exercise output -->
+            <iframe src="./exercises/Intro/exercise.html" id="display"></iframe>
+        </div>
+    </div>
+
+    <div id="code_column">
+        <!-- Exercise code (Rendered with Prism.js) -->
+        <div id="code">
+            <pre><code id="js_box" class="language-js"></code></pre>
+        </div>
+        <div id="code">
+            <pre><code id="css_inner" class="language-css"></code></pre>
+        </div>
+    </div>
+
+    <!-- Load intro page -->
+    <script>switchExercise("Intro");</script>
+
+</body>
+
+</html>

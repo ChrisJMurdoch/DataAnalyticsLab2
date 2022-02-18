@@ -1,0 +1,119 @@
+
+/* Default overrides */
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+html {
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #EBEBF4;
+}
+
+/* Exercise menu */
+
+#menu_outer {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#menu {
+    width: 100%;
+    height: calc( 100% - 100px );
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+}
+#menu div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#menu div h3 {
+    margin: 1em 0 0.5em 0;
+}
+#menu div button {
+    border: none;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+    margin-bottom: 0.25em;
+    color: #202020;
+    text-decoration: underline;
+}
+
+/* Exercise display */
+
+#exercise_column {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: visible;
+}
+
+#exercise {
+    border: 3px solid gray;
+    height: 80%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+#exercise #display, #exercise #code {
+    display: block;
+    height: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+}
+#exercise #display {
+    background-color: white;
+}
+#exercise #code {
+    margin: 0;
+    border-radius: 0;
+    overflow: scroll;
+}
+#exercise #code pre {
+    margin: 0;
+}
+
+/* Code column */
+
+#code_column {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: visible;
+}
+
+#code_column #code {
+    display: block;
+    height: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+}
+#code_column #code {
+    margin: 0;
+    border-radius: 0;
+    overflow: scroll;
+}
+#code_column #code pre {
+    margin: 0;
+}
