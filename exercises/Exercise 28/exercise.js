@@ -7,7 +7,7 @@ d3.select('body')
     .attr('height', height);
 
 // Load data from CSV
-d3.csv("https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/master/data/spheres.csv").then(function(data) {
+d3.csv("https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/data/spheres.csv").then(function(data) {
     
     // Create simulation
     const simulation = d3.forceSimulation(data)
