@@ -1,4 +1,9 @@
 
+// Stop d3 caching result
+function nocache(url) { // From https://stackoverflow.com/a/47870218
+    return `${url}?nocache=${new Date().getTime()}`;
+}
+
 // Populate the menu with a section header and buttons that link to their respective URLs
 function populateMenu(section, exercises) {
     let div = d3.select("#menu").append("div");
@@ -17,13 +22,13 @@ function switchExercise(name) {
     d3.select("#display").attr("src", `./exercises/${name}/exercise.html`);
 
     // Load exercise code into Prism.js box
-    fetch(`https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/exercises/${name}/exercise.js`)
+    fetch(nocache(`https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/exercises/${name}/exercise.js`))
         .then(response => response.text())
         .then( function(text) {
             d3.select("#js_box").text( text );
             Prism.highlightAll(); // Re-render Prism.js code
         });
-    fetch(`https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/exercises/${name}/exercise.css`)
+    fetch(nocache(`https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/exercises/${name}/exercise.css`))
         .then(response => response.text())
         .then( function(text) {
             d3.select("#css_box").text( text );

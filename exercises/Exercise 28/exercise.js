@@ -1,4 +1,9 @@
 
+// Stop d3 caching result
+function nocache(url) { // From https://stackoverflow.com/a/47870218
+    return `${url}?nocache=${new Date().getTime()}`;
+}
+
 // Create SVG
 const width = 600, height = 600;
 const svg = d3.select('body')
@@ -18,10 +23,15 @@ svg.append("text")
     .attr("id", "hovertext")
     .attr("x", "-100px")
     .attr("y", "-100px")
-    .attr("text-anchor", "middle");
+    .attr("text-anchor", "middle")
+    .attr("fill", "white")
+    .attr("font-family", "Arial")
+    .attr("filter", "drop-shadow(0 0 8px rgba(0, 0, 0, 1))");
 
 // Load data from CSV
-d3.csv("https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/data/planets.csv").then(function (data) {
+d3.csv(nocache("https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/data/planets.csv")).then(function (data) {
+
+    console.log(data);
 
     // Create simulation
     const simulation = d3.forceSimulation(data)
@@ -37,14 +47,14 @@ d3.csv("https://raw.githubusercontent.com/ChrisJMurdoch/DataAnalyticsLab2/main/d
         canvas.selectAll('circle')
             .data(data)
             .join('circle')
-            .attr("id", (d) => d.text)
+            .attr("id", (d) => d.text.replace(" ", ""))
             .attr("class", "particle")
             .attr('fill', (d) => d.color)
             .attr('stroke', "black")
             .attr('r', (d) => d.radius)
             .attr('cx', (d) => d.x)
             .attr('cy', (d) => d.y)
-            .on("mouseover", (e, d) => bindHovertext(d.text, parseInt(d.radius)+5) )
+            .on("mouseover", (e, d) => bindHovertext(d.text, parseInt(d.radius)*1.05+5) )
             .on("mouseout",  (e, d) => bindHovertext(null, 0) );
     }
 
@@ -66,7 +76,7 @@ function updateHovertext() {
     
     // If target, float above
     } else {
-        const targetElement = d3.select(`#${hovertextTarget}`);
+        const targetElement = d3.select(`#${hovertextTarget.replace(" ", "")}`);
         d3.select("#hovertext")
             .text(hovertextTarget)
             .attr("x", `${targetElement.attr("cx")}px`)
