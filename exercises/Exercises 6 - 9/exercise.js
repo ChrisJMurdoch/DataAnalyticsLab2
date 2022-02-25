@@ -9,13 +9,13 @@ function addTransitioningDiv(easing) {
         .style('background-color', 'blue')
         .style("margin-bottom", "5px")
 
-        .transition()
+        .transition() // In transition
         .ease(easing)
         .duration(1000)
         .style('width', '80px')
         .style('height', '80px')
 
-        .transition()
+        .transition() // Out transition
         .ease(easing)
         .duration(2000)
         .style('width', '150px')
@@ -42,6 +42,7 @@ function addTransitioningDiv(easing) {
         });
 }
 
+// Add divs to page
 addTransitioningDiv(d3.easeLinear);
 addTransitioningDiv(d3.easeBounce);
 addTransitioningDiv(d3.easeSin);

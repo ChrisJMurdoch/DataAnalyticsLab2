@@ -1,24 +1,24 @@
 
-var svg = d3.select("body")
+// Create SVG
+let svg = d3.select("body")
     .append("svg")
     .attr("width", 500)
     .attr("height", 500);
 
-var bar1 = svg.append("rect")
+    // Add bars
+let bar1 = svg.append("rect")
     .attr("fill", "blue")
     .attr("x", 100)
     .attr("y", 20)
     .attr("height", 20)
     .attr("width", 10);
-
-    var bar2 = svg.append("rect")
+let bar2 = svg.append("rect")
     .attr("fill", "blue")
     .attr("x", 120)
     .attr("y", 20)
     .attr("height", 20)
     .attr("width", 10);
-
-var bar3 = svg.append("rect")
+let bar3 = svg.append("rect")
     .attr("fill", "blue")
     .attr("x", 140)
     .attr("y", 20)
@@ -27,6 +27,7 @@ var bar3 = svg.append("rect")
 
 update();
 
+// Update all bars
 function update() {
 
     bar1.transition()

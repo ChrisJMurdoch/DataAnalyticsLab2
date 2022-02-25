@@ -1,4 +1,5 @@
 
+// 3 elements for 3 buttons
 const data = [1, 2, 3]
 
 d3.select('body')
@@ -12,11 +13,15 @@ d3.select('body')
     .style("margin-bottom", "5px");
 
 d3.selectAll("div")
+
+    // Set rainbow class
     .on("mouseover", function (event) {
         d3.select(this)
             .style("background-color", "orange")
             .classed("rainbow_border", true);
     })
+    
+    // Unset rainbow class
     .on("mouseout", function () {
         d3.select(this)
             .style("background-color", "steelblue")

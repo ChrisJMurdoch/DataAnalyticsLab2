@@ -1,11 +1,14 @@
 
+// 3 circles
 const data = [1, 2, 3]
 
+// Creat SVG
 const svg = d3.select('body')
     .append("svg")
     .attr("width", "400px")
     .attr("height", "300");
 
+// Add circles
 svg.selectAll("circle")
     .data(data)
     .enter()

@@ -1,11 +1,13 @@
 
 const data = [1, 2, 3]
 
+// Create SVG
 const svg = d3.select('body')
     .append("svg")
     .attr("width", "400px")
     .attr("height", "300");
 
+// Add circles
 svg.selectAll("circle")
     .data(data)
     .enter()
@@ -15,6 +17,7 @@ svg.selectAll("circle")
     .attr("r", "25px")
     .attr("fill", "green");
 
+// Set circle events
 svg.selectAll("circle")
     .on("mouseover", function (event) {
 
@@ -37,6 +40,7 @@ svg.selectAll("circle")
             .attr("fill", "steelblue");
     });
 
+// Create text
 svg.append("text")
     .text("This is an SVG text element.")
     .attr("x", "20")
